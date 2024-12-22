@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="32dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Регистрација"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="32dp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Име"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/nameInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Презиме"
+                        android:layout_marginTop="16dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/surnameInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Е-пошта"
+                        android:layout_marginTop="16dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/emailRegInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textEmailAddress"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Лозинка"
+                        android:layout_marginTop="16dp"
+                        app:passwordToggleEnabled="true"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/passwordRegInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPassword"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <RadioGroup
+                        android:id="@+id/userTypeGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/passengerRadio"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="true"
+                            android:text="Патник" />
+
+                        <RadioButton
+                            android:id="@+id/driverRadio"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Возач" />
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:id="@+id/driverDetailsLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Модел на возило"
+                            android:layout_marginTop="16dp"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/carModelInput"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Регистарски број"
+                            android:layout_marginTop="16dp"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/carPlateInput"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:hint="Година"
+                                android:layout_marginTop="16dp"
+                                android:layout_marginEnd="8dp"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/carYearInput"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="number"/>
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:hint="Број на седишта"
+                                android:layout_marginTop="16dp"
+                                android:layout_marginStart="8dp"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/seatsInput"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="number"/>
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Цена по километар (ден.)"
+                            android:layout_marginTop="16dp"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/priceInput"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="numberDecimal"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/registerConfirmButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:text="Регистрирај се"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="24dp"
+                        app:cornerRadius="12dp"
+                        android:backgroundTint="@color/primary"/>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout> 
